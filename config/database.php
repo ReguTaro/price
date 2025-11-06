@@ -16,11 +16,11 @@ class Database {
         
         try {
             // Now these work in both local and Railway environments
-            $host = $_ENV['MYSQLHOST'] ?? 'localhost';
+            $host = $_ENV['MYSQLHOST'] ?? 'mysql.railway.internal';
             $port = $_ENV['MYSQLPORT'] ?? '3306';
-            $database = $_ENV['MYSQLDATABASE'] ?? 'real_estate_management';
+            $database = $_ENV['MYSQLDATABASE'] ?? 'db_real_estate';
             $username = $_ENV['MYSQLUSER'] ?? 'root';
-            $password = $_ENV['MYSQLPASSWORD'] ?? '';
+            $password = $_ENV['MYSQLPASSWORD'] ?? 'TopjJThFOXjwZnpEATjRgOQfgXdqLRLN';
 
             $dsn = "mysql:host={$host};port={$port};dbname={$database};charset=utf8mb4";
             
@@ -38,4 +38,5 @@ class Database {
         return $this->conn;
     }
 }
+
 ?>
